@@ -1,0 +1,65 @@
+---
+const PROJECTS = [
+    {
+        title: 'Venta de máquinas viales en San Juan | AJ Vial Argentina',
+        description: 'productos de maquinaria pesada agrícola o construcción.',
+        link: 'https://ajvialargentina.com/',
+        github: '',
+        image: '/images/projects/ajvialimage.png',
+        tags : ['PHP', 'Codeigniter', 'MySQL', 'Bootstrap' ,'HTML', 'CSS', 'JQuery']
+    },
+    {
+        title: '',
+        description: '',
+        link: 'https://premios-cordoba.onrender.com/',
+        github: '',
+        image: '',
+        tags : []
+    },
+    {
+        title: '',
+        description: '',
+        link: 'https://white-house-construction.onrender.com/',
+        github: '',
+        image: '',
+        tags : []
+    },
+    {
+        title: '',
+        description: '',
+        link: 'https://travel-fast.onrender.com/',
+        github: '',
+        image: '',
+        tags : []
+    },
+    {
+        title: '',
+        description: '',
+        link: 'https://luxure-house.onrender.com/',
+        github: '',
+        image: '',
+        tags : []
+    }
+]
+---
+
+{
+    PROJECTS.map(project => (
+        <article>
+            <h3 class="text-2xl font-semibold text-orange-200 mb-2">{project.title}</h3>
+            <p class="text-lg mb-4 text-pretty w-full whitespace-pre-line">{project.description}</p>
+            <ul class="flex gap-x-4 flex-row mb-2">
+                {project.tags.map((tag) => (
+                    <li>
+                        <span class="flex gap-x-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition text-xs py-1 px-2">{tag}</span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/10"
+                src={project.image}
+                alt={project.title} 
+            />
+        </article>
+    ))
+}

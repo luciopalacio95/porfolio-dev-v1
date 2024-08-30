@@ -1,0 +1,73 @@
+---
+import ExprienceItem from "./ExprienceItem.astro"
+
+const EXPERIENCIE = [
+    {
+        date: "Abr. 2022 - Dic. 2023",
+        title: "Fleet Alert · Full Stack Developer",
+        description: `Fleet Alert (https://fleet-alert.com/) es un sistema el cual permite la gestión de flotas de vehículos montacargas en tiempo real en el cual podemos llevar un registro de los operadores y vehículos. Reportes en tablas y/o gráficos con filtros por día/semana/mes/rango de fecha, entre otras cosas.
+
+            ● Desarrollo, planificación e implementación de mejoras o nuevas funcionalidades en el sistema utilizando Laravel para el backend y React.js para el frontend. Ambos en entornos separados y comunicándose mediante consultas API´s.
+            ● Mantenimiento del sitio web comercial en WordPress con plantilla custom.
+
+            Tecnologías: Laravel, React.js, WordPress, PostgreSQL, GitLab.`,
+        link: "",
+    },
+    {
+        date: "Ago. 2021 - Mar. 2022",
+        title: "25Watts · Front End Developer",
+        description: `25Watts (https://www.25watts.com.ar/) es una agencia de marketing y desarrollo en la cual tienen diversos clientes, siendo su fuerte los e-commerce, Algunos de los cuales son Nobis (empresa prestadora de prepaga médica), Electro Alem (tienda digital la cual vende productos de electricidad para el hogar), 710 (tienda digital la cual vende uniformes, accesorios y elementos vinculados a la seguridad y/o policial).
+
+            ● Participación en reuniones de los proyectos asignados y presentación de los cambios y/o mejoras con el cliente.
+            ● Utilización de Jira para gestión de las tareas y Gitflow como metodología de trabajo.
+            ● Mantenimiento de sitios web:
+            ○ Agregar y/o actualizar productos.
+            ○ Cambio de sliders.
+            ○ Agregar nuevas secciones.
+            ○ Cargar notas al blog.
+
+            Tecnologías: WordPress, PrestaShop, Magento y React.js.`,
+        link: "",
+    },
+    {
+        date: "Nov. 2019 - Ago. 2021",
+        title: "Grupo Max Desarrollista Inmobiliario · Front End Developer",
+        description: `Grupo Max es un desarrollista inmobiliario con construcción en seco, cuenta con diversos productos el cual cada uno tiene su página web propia en modo de catálogo y con un formulario de contacto conectado a un CRM de la empresa mediante API. 
+
+            ● Participación en reuniones recurrentes para planificación de campañas de marketing.
+            ● Utilización de Trello para la gestión de tareas.
+            ● Responsable de las tareas Front-end:
+            ○ Desarrollo y/o actualización de los productos del catálogo de los distintos sitios web.
+            ○ Cambio de sliders.
+            ○ Modernización de los sitios web realizados en Slim Framework a React.js con un diseño totalmente nuevo y renovado.
+            ● Alojamiento de los sitios en AWS y utilizando como repositorio Bitbucket.
+            ● Mantenimiento diario del CRM desarrollado en Laravel, lo cual consiste en actualización de la lista de precios en el sistema, planificación y desarrollo de nuevas funcionalidades tales como gestión de citas a los showroom, generador de presupuestos, dashboard con reportes de las ventas, consultas y ranking de vendedores en tiempo real del mes o rango de fecha, etc.
+
+            Tecnologías: Laravel, Slim, CSS, HTML5, Bootstrap, JavaScript, jQuery, PHP, React.js y MySQL.`,
+        link: "",
+    },
+    {
+        date: "Ago. 2017 - Mar. 2018",
+        title: "Agencia Valor Digital · Full Stack Developer",
+        description: `Valor Digital (https://valordigital.com.ar/) es una agencia de marketing la cual su fuerte son las páginas en wordpress y algunas páginas hechas a medida.
+
+            ● Participación en las reuniones con los clientes.
+            ● Creación de bloques personalizados para sitios web en WordPress. 
+            ● Desarrollo y mantenimiento de proyectos a medida con base en PHP.
+
+            Tecnologías: PHP, Codeigniter, CSS, HTML5, AJAX, Bootstrap, jQuery y MySQL.`,
+        link: "",
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCIE.map(experiencie => (
+            <li class="mb-10 ms-4">
+                <ExprienceItem {... experiencie}/>
+            </li>
+        ))
+    }
+</ol>
+
