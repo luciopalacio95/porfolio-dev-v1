@@ -1,0 +1,74 @@
+---
+import ExprienceItem from "../ExprienceItem.astro"
+
+const EXPERIENCIE = [
+    {
+        date: "Apr. 2022 - Dec. 2023",
+        title: "Fleet Alert · Full Stack Developer",
+        description: `Fleet Alert (https://fleet-alert.com/) is a system which allows the management of fleets of forklift vehicles in real time in which we can keep a record of the operators, their income and expenses, the vehicle they have. assigned, reports in tables and/or graphs with the number of hours worked per day/week/month/date range, records of impacts and proximity, being able to see the vehicle on a plan or map in real time, maintenance schedule, among other things.
+
+            ● Development, planning and implementation of improvements or new functionalities in the system using Laravel for the backend and React.js for the frontend. Both in separate environments and communicating through API queries.
+            ● Maintenance of the commercial website in WordPress with a custom template.
+
+            Technologies: Laravel, React.js, WordPress, PostgreSQL, GitLab.`,
+        link: "",
+    },
+    {
+        date: "Ago. 2021 - Mar. 2022",
+        title: "25Watts · Front End Developer",
+        description: `25Watts (https://www.25watts.com.ar/) is a marketing and development agency in which they have various clients, their strength being e-commerce, some of which are Nobis (prepaid medical provider company) , Electro Alem (digital store which sells electrical products for the home), 710 (digital store which sells uniforms, accessories and elements linked to security and/or police).
+
+            ● Participation in meetings of assigned projects and presentation of changes and/or improvements with the client.
+            ● Use of Jira for task management and Gitflow as a work methodology.
+            ● Website maintenance:
+                ○ Add and/or update products.
+                ○ Change of sliders.
+                ○ Add new sections.
+                ○ Upload notes to the blog.
+
+            Technologies: WordPress, PrestaShop, Magento y React.js.`,
+        link: "",
+    },
+    {
+        date: "Nov. 2019 - Ago. 2021",
+        title: "Grupo Max Desarrollista Inmobiliario · Front End Developer",
+        description: `Grupo Max is a real estate developer with dry construction, it has various products, each of which has its own website in catalog mode and with a contact form connected to the company's CRM through API.
+
+            ● Participation in recurring meetings to plan marketing campaigns.
+            ● Use of Trello for task management.
+            ● Responsible for Front-end tasks:
+                ○ Development and/or updating of the products in the catalog of the different websites.
+                ○ Change of sliders.
+                ○ Modernization of websites made in Slim Framework to React.js with a completely new and
+            renewed design.
+            ● Hosting the sites on AWS and using Bitbucket as a repository.
+            ● Daily maintenance of the CRM developed in Laravel.
+
+            Technologies: Laravel, Slim, CSS, HTML5, Bootstrap, JavaScript, jQuery, PHP, React.js y MySQL.`,
+        link: "",
+    },
+    {
+        date: "Ago. 2017 - Mar. 2018",
+        title: "Agencia Valor Digital · Full Stack Developer",
+        description: `Valor Digital (https://valordigital.com.ar/) is a marketing agency whose strength is WordPress pages and some custom-made pages.
+
+            ● Participation in meetings with clients.
+            ● Creation of custom blocks for WordPress websites.
+            ● Development and maintenance of custom projects based on PHP.
+
+            Technologies: PHP, Codeigniter, CSS, HTML5, AJAX, Bootstrap, jQuery y MySQL.`,
+        link: "",
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCIE.map(experiencie => (
+            <li class="mb-10 ms-4">
+                <ExprienceItem {... experiencie}/>
+            </li>
+        ))
+    }
+</ol>
+

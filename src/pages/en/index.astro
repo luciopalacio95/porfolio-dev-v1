@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionContainer from '../../components/SectionContainer.astro';
+import Experience from '../../components/en/Experience.astro';
+import Projects from '../../components/en/Projects.astro';
+import Hero from '../../components/en/Hero.astro';
+import TitleSection from '../../components/TitleSection.astro';
+import ProfileCheck from '../../icons/ProfileCheck.astro';
+import AboutMe from '../../components/en/AboutMe.astro';
+import BriefcaseIcon from '../../icons/Briefcase.astro';
+import CodeIcon from '../../icons/Code.astro';
+---
+
+<Layout language="en"
+	title="Porfolio of Lucio Palacio - FullStack Developer"
+	description="Experience and professionalism in the same place."
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-36">
+			<Hero>
+			</slot>
+		  </Hero>
+		</SectionContainer>
+		<div class="space-y-24">
+
+		<SectionContainer id="experience">
+			<TitleSection>
+				<BriefcaseIcon class="size-8" />
+				Work Experience
+			</TitleSection>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="projects" class="pb-20">
+			<TitleSection>
+				<CodeIcon class="size-7" />
+				Projects
+				</TitleSection>
+			<Projects />
+		</SectionContainer>
+		<SectionContainer id="about-me">
+			<TitleSection>
+			  <ProfileCheck class="size-8" />
+			  About me
+			</TitleSection>
+			<AboutMe />
+		  </SectionContainer>
+		</div>
+	</main>
+</Layout>

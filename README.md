@@ -33,3 +33,6 @@ https://bg.ibelick.com/
 
 ## Donde se sacaron los icons de las redes sociales
 https://svgl.app/
+
+## multilenguaje
+https://blogs.sajankumarv.com/multi-language-support-in-astro-60336784bc9f
