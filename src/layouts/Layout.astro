@@ -1,5 +1,4 @@
 ---
-import {  getRelativeLocaleUrlList } from 'astro:i18n';
 import '@fontsource-variable/onest';
 import Header from '../components/Header.astro';
 import HeaderEn from '../components/en/Header.astro';
@@ -14,7 +13,6 @@ interface Props {
 }
 
 const {language, title, description } = Astro.props;
-const localeUrls = getRelativeLocaleUrlList();
 ---
 
 <!doctype html>
