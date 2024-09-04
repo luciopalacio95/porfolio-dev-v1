@@ -1,65 +1,99 @@
 ---
+import GitHub from "../icons/GitHub.astro"
+import Link from "../icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
 const PROJECTS = [
     {
         title: 'Venta de máquinas viales en San Juan | AJ Vial Argentina',
-        description: 'productos de maquinaria pesada agrícola o construcción.',
+        description: 'Productos de maquinaria pesada agrícola o construcción.',
         link: 'https://ajvialargentina.com/',
         github: '',
-        image: '/images/projects/ajvialimage.png',
+        image: '/images/projects/ajvialImage.png',
         tags : ['PHP', 'Codeigniter', 'MySQL', 'Bootstrap' ,'HTML', 'CSS', 'JQuery']
     },
     {
-        title: '',
-        description: '',
+        title: 'Premios Jerónimo de la gente',
+        description: 'El compromiso y ganas de transformar la ciudad generan proyectos, el impulso de seguir buenas causas e innovar. Te presentamos a vecinos que, como vos, piensan y trabajan todos los días por los demás. Y por eso, la ciudad los elige como candidatos al Jerónimo de la Gente.',
         link: 'https://premios-cordoba.onrender.com/',
         github: '',
-        image: '',
-        tags : []
+        image: '/images/projects/premiosImage.png',
+        tags : ['Next.js', 'JavaScript', 'Bootstrap', 'HTML', 'CSS']
     },
     {
-        title: '',
-        description: '',
+        title: 'White House Constructora',
+        description: '🏡 Construimos Casas en Seco en todo el país. ✅Ofrecemos facilidades de pago ✅ Ingresá ahora y conocé nuestros modelos.',
         link: 'https://white-house-construction.onrender.com/',
         github: '',
-        image: '',
-        tags : []
+        image: '/images/projects/whiteImage.png',
+        tags : ['React + Vite', 'JavaScript', 'HTML', 'CSS']
     },
     {
-        title: '',
-        description: '',
+        title: 'Travel Fast',
+        description: 'Travel Now! Discover the world through your own eyes. You have been waiting for the big moment to travel.',
         link: 'https://travel-fast.onrender.com/',
         github: '',
-        image: '',
-        tags : []
+        image: '/images/projects/travelImage.png',
+        tags : ['React + Vite', 'JavaScript', 'Bootstrap' ,'HTML', 'CSS']
     },
     {
-        title: '',
-        description: '',
+        title: 'Luxure House - Modern Buildings',
+        description: '🏡 Construimos Casas Prefabricadas con las ultimas tendencias en diseño en todo el país. ✅Contamos con facilidades de pago ✅ Ingresá ahora y conocé nuestros productos.',
         link: 'https://luxure-house.onrender.com/',
         github: '',
-        image: '',
-        tags : []
+        image: '/images/projects/luxureImage.png',
+        tags : ['Next.js', 'JavaScript', 'HTML', 'CSS']
     }
 ]
 ---
-
+<div class="flex flex-col gap-y-16">
 {
     PROJECTS.map(project => (
-        <article>
-            <h3 class="text-2xl font-semibold text-orange-200 mb-2">{project.title}</h3>
-            <p class="text-lg mb-4 text-pretty w-full whitespace-pre-line">{project.description}</p>
-            <ul class="flex gap-x-4 flex-row mb-2">
-                {project.tags.map((tag) => (
-                    <li>
-                        <span class="flex gap-x-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition text-xs py-1 px-2">{tag}</span>
-                    </li>
-                ))}
-            </ul>
-            <img
-                class="rounded shadow-2xl shadow-white/10"
-                src={project.image}
-                alt={project.title} 
-            />
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                    <img 
+                        src={project.image}
+                        alt={project.title} 
+                        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"  
+                    />
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-2xl font-bold text-yellow-400 dark:text-orange-100">
+                    {project.title}
+                </h3>
+                
+                <div class="flex flex-wrap mt-2">
+                    <nav class="contents mb-2 gap-x-2">
+                        {project.tags.map((tag) => (
+                            <div>
+                                <span class="flex gap-x-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition text-xs py-1 px-2">{tag}</span>
+                            </div>
+                        ))}
+                    </nav>
+
+                    <div class="mt-2 text-gray-700 dark:text-gray-400">
+                        {project.description}
+                    </div>
+                    <footer class="flex items-end justify-start mt-4 gap-x-4">
+                        {project.github && (
+                            <LinkButton href={project.github}>
+                            <GitHub class="size-6" />
+                            Code
+                            
+                            </LinkButton>
+                        )}
+                        {project.link && (
+                            <LinkButton href={project.link}>
+                            <Link class="size-4" />
+                            Preview
+                            </LinkButton>
+                        )}
+                    </footer>
+                </div>
+            </div>
         </article>
     ))
 }
+</div>

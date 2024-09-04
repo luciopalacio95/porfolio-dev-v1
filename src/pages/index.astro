@@ -3,13 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Experience from '../components/Experience.astro';
 import Badge from '../components/Badge.astro';
-import SocialPill from '../components/SocialPill.astro';
-import LinkedInIcon from '../icons/LinkedIn.astro';
-import GitHubIcon from '../icons/GitHub.astro';
-import MailIcon from '../icons/Mail.astro';
+
 import BriefcaseIcon from '../icons/Briefcase.astro';
 import CodeIcon from '../icons/Code.astro';
 import Projects from '../components/Projects.astro';
+import Hero from '../components/Hero.astro';
+import TitleSection from '../components/TitleSection.astro';
+import ProfileCheck from '../icons/ProfileCheck.astro';
+import AboutMe from '../components/AboutMe.astro';
 ---
 
 <Layout 
@@ -18,53 +19,33 @@ import Projects from '../components/Projects.astro';
 >
 	<main class="px-4">
 		<SectionContainer class="py-44 pb-36">
-			<img
-				class="rounded-full size-20 mb-5"
-				src="https://avatars.githubusercontent.com/u/32017626?s=400&u=734d7652a0c140b8bb821c194000bd71842d54df&v=4"  
-				alt="foto perfil"
-			>
-			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-10">
-				Hola, soy Lucio <a
-					href="https://www.linkedin.com/in/lucio-palacio-developer/" 
-					target="_blank"
-					rel="noopener"
-					class="flex justify-center items-center">
-					<Badge>Disponible para trabajar</Badge>
-				</a>
-			</h1>
-			<h2 class="text-xl text-wrap">
-				<span class="text-orange-200">+7 años de experiencia.</span>
-				<span>Desarrollador web FullStack. De Córdoba, Argentina.</span>
-			</h2>
-			<nav class="flex gap-4 mt-8 flex-wrap ">
-				<SocialPill href="https://www.linkedin.com/in/lucio-palacio-developer/">
-					<LinkedInIcon class="size-6"/>
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/luciopalacio95">
-					<GitHubIcon class="size-6"/>
-					GitHub
-				</SocialPill>
-				<SocialPill href="mailto:luciopalacio95@gmail.com">
-					<MailIcon class="size-6"/>
-					luciopalacio95@gmail.com
-				</SocialPill>
-			</nav>
+			<Hero>
+			</slot>
+		  </Hero>
 		</SectionContainer>
+		<div class="space-y-24">
 
 		<SectionContainer id="experiencia">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<BriefcaseIcon class="size-7" />
+			<TitleSection>
+				<BriefcaseIcon class="size-8" />
 				Experiencia Laboral
-			</h2>
+			</TitleSection>
 			<Experience />
 		</SectionContainer>
 		<SectionContainer id="proyectos" class="pb-20">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<TitleSection>
 				<CodeIcon class="size-7" />
 				Proyectos
-			</h2>
+				</TitleSection>
 			<Projects />
 		</SectionContainer>
+		<SectionContainer id="sobre-mi">
+			<TitleSection>
+			  <ProfileCheck class="size-8" />
+			  Sobre mí
+			</TitleSection>
+			<AboutMe />
+		  </SectionContainer>
+		</div>
 	</main>
 </Layout>
