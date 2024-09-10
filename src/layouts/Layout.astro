@@ -5,54 +5,25 @@ import HeaderEn from '../components/en/Header.astro';
 import Footer from '../components/Footer.astro';
 import FooterEn from '../components/en/Footer.astro';
 import { ViewTransitions } from "astro:transitions"
-import { SEO } from "astro-seo"
-import { seoConfig } from "../../util/seoConfig"
 
 interface Props {
 	language: string;
 	title: string;
 	description: string;
-  disableIndexing?: boolean;
 
 }
 
-const {language, title, description, disableIndexing = false } = Astro.props;
+const {language, title, description} = Astro.props;
 ---
 
 <!doctype html>
 <html lang={language}>
 	<head>
-    		<!-- SEO. -->
-		<SEO
-      title={title}
-      description={seoConfig.description || description}
-      noindex={disableIndexing}
-      nofollow={disableIndexing}
-      openGraph={{
-        basic: {
-          title: title,
-          type: "website",
-          image: seoConfig.image.url || '/favicon.svg'
-        },
-        image: {
-          width: seoConfig.image.width,
-          height: seoConfig.image.height,
-          alt: seoConfig.image.alt || 'favicon'
-        },
-        optional: {
-          siteName: seoConfig.siteName,
-          description: seoConfig.description || description
-        }
-      }}
-    />
+
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#fff" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
-		<link rel="manifest" href="/manifest.webmanifest" />
-
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
@@ -67,10 +38,6 @@ const {language, title, description, disableIndexing = false } = Astro.props;
 		{language === 'en' ? <HeaderEn/> : <Header/>}
 		<slot />
     {language === 'en' ? <FooterEn/> : <Footer/>}
-    <script>
-			// This is a hack to get vite-plugin-pwa to generate a sw.js file.
-			// Do not remove this script tag.
-		</script>
 	</body>
 </html>
 <style is:global>
