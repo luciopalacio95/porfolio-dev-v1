@@ -1,6 +1,7 @@
 {
   "name": "porfolio-dev",
   "type": "module",
+  "private": false,
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -11,10 +12,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
+    "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/onest": "^5.0.5",
     "astro": "^4.14.5",
+    "astro-compress": "^2.3.1",
+    "astro-seo": "^0.8.4",
     "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vite-plugin-pwa": "^0.20.5"
   }
 }
